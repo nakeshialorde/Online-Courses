@@ -1,0 +1,335 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{5F661FD7-1137-4228-94A3-ED1DAB81958E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>ConsoleApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>online_courses</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="admin.html" />
+    <Content Include="assets\css\animate.min.css" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\demo.css" />
+    <Content Include="assets\css\light-bootstrap-dashboard.css" />
+    <Content Include="assets\css\pe-icon-7-stroke.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\fonts\Pe-icon-7-stroke.svg" />
+    <Content Include="assets\img\default-avatar.png" />
+    <Content Include="assets\img\faces\face-0.jpg" />
+    <Content Include="assets\img\faces\face-1.jpg" />
+    <Content Include="assets\img\faces\face-2.jpg" />
+    <Content Include="assets\img\faces\face-3.jpg" />
+    <Content Include="assets\img\faces\face-4.jpg" />
+    <Content Include="assets\img\faces\face-5.jpg" />
+    <Content Include="assets\img\faces\face-6.jpg" />
+    <Content Include="assets\img\faces\face-7.jpg" />
+    <Content Include="assets\img\faces\tim_vector.jpe" />
+    <Content Include="assets\img\favicon.ico" />
+    <Content Include="assets\img\full-screen-image-3.jpg" />
+    <Content Include="assets\img\loading-bubbles.svg" />
+    <Content Include="assets\img\mask.png" />
+    <Content Include="assets\img\new_logo.png" />
+    <Content Include="assets\img\sidebar-1.jpg" />
+    <Content Include="assets\img\sidebar-2.jpg" />
+    <Content Include="assets\img\sidebar-3.jpg" />
+    <Content Include="assets\img\sidebar-4.jpg" />
+    <Content Include="assets\img\sidebar-5.jpg" />
+    <Content Include="assets\img\tim_80x80.png" />
+    <Content Include="assets\js\bootstrap-notify.js" />
+    <Content Include="assets\js\bootstrap-select.js" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\chartist.min.js" />
+    <Content Include="assets\js\demo.js" />
+    <Content Include="assets\js\jquery.3.2.1.min.js" />
+    <Content Include="assets\js\light-bootstrap-dashboard.js" />
+    <Content Include="cxc_courses\CXC_ENGLISH A\index.php.html" />
+    <Content Include="cxc_courses\CXC_MATHEMATICS\chapter1\Rules of Addition.html" />
+    <Content Include="cxc_courses\CXC_MATHEMATICS\chapter1\Section 1 - Computation_Introduction.html" />
+    <Content Include="cxc_courses\CXC_MATHEMATICS\chapter2\section2.html" />
+    <Content Include="cxc_courses\CXC_MATHEMATICS\chapter2\section2part1.html" />
+    <Content Include="cxc_courses\CXC_MATHEMATICS\chapter2\section2_part1.html" />
+    <Content Include="cxc_courses\CXC_MATHEMATICS\chapter6\Section 6 - Algebra_Introduction.html" />
+    <Content Include="cxc_courses\CXC_MATHEMATICS\chapter9\vectorsandmatrices.html" />
+    <Content Include="cxc_courses\CXC_MATHEMATICS\chapter9\vectorsandmatrices1.html" />
+    <Content Include="cxc_courses\CXC_MATHEMATICS\chapter9\vectorsandmatrices2.html" />
+    <Content Include="cxc_courses\CXC_MATHEMATICS\index.php.html" />
+    <Content Include="dashboard.html" />
+    <Content Include="documentation\css\documentation.css" />
+    <Content Include="documentation\tutorial-components.html" />
+    <Content Include="home.html" />
+    <Content Include="icons.html" />
+    <Content Include="img\01b203c62bbc6cccb2d3f7d4f3805fe0.gif" />
+    <Content Include="img\028.JPG.png" />
+    <Content Include="img\11149545_766129856827355_6192733826662735382_n.png" />
+    <Content Include="img\2016-01-28 14.25.33.jpg" />
+    <Content Include="img\20170306_121755 %281%29.jpg" />
+    <Content Include="img\20170306_121755.jpg" />
+    <Content Include="img\20170413_192626.jpg.png" />
+    <Content Include="img\734371_10200160093661007_135036061_n.jpg.png" />
+    <Content Include="img\A+.jpg" />
+    <Content Include="img\accept-online-payments_1.png" />
+    <Content Include="img\Adobe Spark Video %284%29.mp4" />
+    <Content Include="img\aftrl1a.png.png" />
+    <Content Include="img\argumentative-essay.jpg" />
+    <Content Include="img\bestessay.jpg" />
+    <Content Include="img\blue-btn.png" />
+    <Content Include="img\books.jpg" />
+    <Content Include="img\Boy-Reading.jpg" />
+    <Content Include="img\business-explainer-1 %281%29.mp4" />
+    <Content Include="img\campus-turnitin-lena.jpg" />
+    <Content Include="img\Capture.JPG.png" />
+    <Content Include="img\cd-icon-close.svg" />
+    <Content Include="img\cd-icon-email.svg" />
+    <Content Include="img\cd-icon-menu.svg" />
+    <Content Include="img\cd-icon-password.svg" />
+    <Content Include="img\cd-icon-username.svg" />
+    <Content Include="img\cd-logo.svg" />
+    <Content Include="img\comodo_secure_seal_76x26_transp.png" />
+    <Content Include="img\customer-service-examples.png" />
+    <Content Include="img\customer-service-scenarios.png" />
+    <Content Include="img\cxctutors.JPG.png" />
+    <Content Include="img\DFrancis %281%29.JPG" />
+    <Content Include="img\download %281%29.png" />
+    <Content Include="img\download.jpg" />
+    <Content Include="img\download.png" />
+    <Content Include="img\download_thumbnail.jpeg" />
+    <Content Include="img\english.jpg" />
+    <Content Include="img\es.jpg" />
+    <Content Include="img\essay.jpg" />
+    <Content Include="img\exam-tips.png" />
+    <Content Include="img\FB_IMG_1454238917901.jpg.png" />
+    <Content Include="img\FullSizeRender.jpg.png" />
+    <Content Include="img\gmail.png" />
+    <Content Include="img\Graduates_primary_page.jpg" />
+    <Content Include="img\gray-icon.png" />
+    <Content Include="img\green-btn.png" />
+    <Content Include="img\How-to-Write-Bibliography-in-MLA-Citation-Style.jpg" />
+    <Content Include="img\icon-tutoring-english.png" />
+    <Content Include="img\icon_tutor.png" />
+    <Content Include="img\image.jpg" />
+    <Content Include="img\image3.JPG.png" />
+    <Content Include="img\image4.JPG.png" />
+    <Content Include="img\image5.JPG.png" />
+    <Content Include="img\image7.JPG.png" />
+    <Content Include="img\images.jpg" />
+    <Content Include="img\IMG-20160804-WA0012.jpg" />
+    <Content Include="img\IMG-20160804-WA0012.png" />
+    <Content Include="img\IMG-20170715-WA0000.jpg.png" />
+    <Content Include="img\IMG-20170720-WA0000.jpg.png" />
+    <Content Include="img\IMG-20170721-WA0007.jpg.png" />
+    <Content Include="img\img-content-1.png" />
+    <Content Include="img\img.jpg" />
+    <Content Include="img\IMG_1288.JPG.png" />
+    <Content Include="img\IMG_20170712_225547_077.JPG" />
+    <Content Include="img\IMG_20170712_225547_077.png" />
+    <Content Include="img\IMG_2028.JPG.png" />
+    <Content Include="img\index.html" />
+    <Content Include="img\jj.JPG.png" />
+    <Content Include="img\js\main.js" />
+    <Content Include="img\js\placeholders.min.js" />
+    <Content Include="img\July15Newsletter_ReadingIcon.png" />
+    <Content Include="img\khj.JPG.png" />
+    <Content Include="img\kl.JPG.png" />
+    <Content Include="img\kll.JPG.png" />
+    <Content Include="img\landing-3.jpg" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\logo.png.png" />
+    <Content Include="img\main5a.jpg" />
+    <Content Include="img\math.gif" />
+    <Content Include="img\Math.jpg" />
+    <Content Include="img\nonverbal.png" />
+    <Content Include="img\okok.JPG.png" />
+    <Content Include="img\our-process-icons.png" />
+    <Content Include="img\owl.jpg" />
+    <Content Include="img\Page-001.png" />
+    <Content Include="img\Page-002.png" />
+    <Content Include="img\Page1_01.jpg" />
+    <Content Include="img\payment-options.jpg" />
+    <Content Include="img\Payoneer-MasterCard-Benign-Blog.png" />
+    <Content Include="img\peer-tutoring-FAQ.jpg" />
+    <Content Include="img\pencil.png" />
+    <Content Include="img\plpl.JPG" />
+    <Content Include="img\plpl.JPG.png" />
+    <Content Include="img\profile.png" />
+    <Content Include="img\scale-310471_640.png" />
+    <Content Include="img\service-request.png" />
+    <Content Include="img\services-icons.jpg" />
+    <Content Include="img\skype.png" />
+    <Content Include="img\SL-Homework-2-2016-600x327.png" />
+    <Content Include="img\Snapchat-3320335771431528724.jpg.png" />
+    <Content Include="img\SPM-Exam-Preparation.png" />
+    <Content Include="img\sqZMLnXo.png" />
+    <Content Include="img\Stet %283%29.png" />
+    <Content Include="img\textbooks.jpg" />
+    <Content Include="img\textbooks.jpg.png" />
+    <Content Include="img\Top_Study_Tips_Poster.JPG" />
+    <Content Include="img\trasferimento %2815%29.jpg" />
+    <Content Include="img\tutor.jpg.png" />
+    <Content Include="img\tutoring-icon.png" />
+    <Content Include="img\unnamed.png" />
+    <Content Include="img\writing-essay-papers-cheer-up-mate-fwc2gC-clipart.jpg" />
+    <Content Include="index.html" />
+    <Content Include="individualcourses.html" />
+    <Content Include="js\main.js" />
+    <Content Include="js\placeholders.min.js" />
+    <Content Include="login.html" />
+    <Content Include="login.php" />
+    <Content Include="login.sql" />
+    <Content Include="logout.php" />
+    <Content Include="makepayment.html" />
+    <Content Include="Course_List.html" />
+    <Content Include="mathematics.html" />
+    <Content Include="notifications.html" />
+    <Content Include="progress.html" />
+    <Content Include="register.aspx" />
+    <Content Include="register.php" />
+    <Content Include="signup.html" />
+    <Content Include="success.php" />
+    <Content Include="table.html" />
+    <Content Include="template.html" />
+    <Content Include="upgrade.html" />
+    <Content Include="user.html" />
+    <Content Include="wp-login.php" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\css\light-bootstrap-dashboard.css~" />
+    <None Include="assets\fonts\Pe-icon-7-stroke.eot" />
+    <None Include="assets\fonts\Pe-icon-7-stroke.ttf" />
+    <None Include="assets\fonts\Pe-icon-7-stroke.woff" />
+    <None Include="assets\sass\lbd\mixins\_buttons.scss" />
+    <None Include="assets\sass\lbd\mixins\_cards.scss" />
+    <None Include="assets\sass\lbd\mixins\_chartist.scss" />
+    <None Include="assets\sass\lbd\mixins\_icons.scss" />
+    <None Include="assets\sass\lbd\mixins\_inputs.scss" />
+    <None Include="assets\sass\lbd\mixins\_labels.scss" />
+    <None Include="assets\sass\lbd\mixins\_morphing-buttons.scss" />
+    <None Include="assets\sass\lbd\mixins\_navbars.scss" />
+    <None Include="assets\sass\lbd\mixins\_social-buttons.scss" />
+    <None Include="assets\sass\lbd\mixins\_tabs.scss" />
+    <None Include="assets\sass\lbd\mixins\_transparency.scss" />
+    <None Include="assets\sass\lbd\mixins\_vendor-prefixes.scss" />
+    <None Include="assets\sass\lbd\_alerts.scss" />
+    <None Include="assets\sass\lbd\_buttons.scss" />
+    <None Include="assets\sass\lbd\_cards.scss" />
+    <None Include="assets\sass\lbd\_chartist.scss" />
+    <None Include="assets\sass\lbd\_checkbox-radio-switch.scss" />
+    <None Include="assets\sass\lbd\_dropdown.scss" />
+    <None Include="assets\sass\lbd\_footers.scss" />
+    <None Include="assets\sass\lbd\_inputs.scss" />
+    <None Include="assets\sass\lbd\_misc.scss" />
+    <None Include="assets\sass\lbd\_mixins.scss" />
+    <None Include="assets\sass\lbd\_navbars.scss" />
+    <None Include="assets\sass\lbd\_responsive.scss" />
+    <None Include="assets\sass\lbd\_sidebar-and-main-panel.scss" />
+    <None Include="assets\sass\lbd\_tables.scss" />
+    <None Include="assets\sass\lbd\_typography.scss" />
+    <None Include="assets\sass\lbd\_variables.scss" />
+    <None Include="assets\sass\light-bootstrap-dashboard.scss" />
+    <None Include="CHANGELOG.md" />
+    <None Include="cxc_courses\CXC_MATHEMATICS\chapter2\section2.html~" />
+    <None Include="cxc_courses\CXC_MATHEMATICS\chapter2\section2part1.html~" />
+    <None Include="cxc_courses\CXC_MATHEMATICS\chapter2\section2_part1.html~" />
+    <None Include="cxc_courses\CXC_MATHEMATICS\chapter9\vectorsandmatrices1.html~" />
+    <None Include="cxc_courses\CXC_MATHEMATICS\chapter9\vectorsandmatrices2.html~" />
+    <None Include="cxc_courses\CXC_MATHEMATICS\Formulas\formula.pdf" />
+    <None Include="dashboard.html~" />
+    <None Include="img\.goutputstream-TP98HZ" />
+    <None Include="img\Anansi and the Spider.pdf" />
+    <None Include="img\anansi.pdf" />
+    <None Include="img\Anansi_stories.pdf" />
+    <None Include="img\barker_folktales_preview.pdf" />
+    <None Include="img\cbt14-Short Stories For Children.pdf" />
+    <None Include="img\childrens-colors-of-the-rainbow.pdf" />
+    <None Include="img\Easy stories_easy_learning_using_self-developed_stories_to_enhance_children_s_listening_and_speaking_skills.pdf" />
+    <None Include="img\Literature Review.pdf" />
+    <None Include="img\Short-Stories-for-Children.pdf" />
+    <None Include="LICENSE.md" />
+    <None Include="login.db" />
+    <None Include="login.html~" />
+    <None Include="login.php~" />
+    <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="cxc_courses\CXC_ENGLISH A\Answers\chapter1\" />
+    <Folder Include="cxc_courses\CXC_ENGLISH A\Answers\chapter2\" />
+    <Folder Include="cxc_courses\CXC_ENGLISH A\Answers\chapter3\" />
+    <Folder Include="cxc_courses\CXC_ENGLISH A\Answers\chapter4\" />
+    <Folder Include="cxc_courses\CXC_ENGLISH A\Answers\chapter5\" />
+    <Folder Include="cxc_courses\CXC_ENGLISH A\Answers\chapter6\" />
+    <Folder Include="cxc_courses\CXC_ENGLISH A\Answers\chapter7\" />
+    <Folder Include="cxc_courses\CXC_ENGLISH A\Answers\chapter8\" />
+    <Folder Include="cxc_courses\CXC_ENGLISH A\Answers\chapter9\" />
+    <Folder Include="cxc_courses\CXC_ENGLISH A\Assets\" />
+    <Folder Include="cxc_courses\CXC_ENGLISH A\chapter1\" />
+    <Folder Include="cxc_courses\CXC_ENGLISH A\chapter2\" />
+    <Folder Include="cxc_courses\CXC_ENGLISH A\chapter3\" />
+    <Folder Include="cxc_courses\CXC_ENGLISH A\chapter4\" />
+    <Folder Include="cxc_courses\CXC_ENGLISH A\chapter5\" />
+    <Folder Include="cxc_courses\CXC_ENGLISH A\chapter6\" />
+    <Folder Include="cxc_courses\CXC_ENGLISH A\chapter7\" />
+    <Folder Include="cxc_courses\CXC_ENGLISH A\chapter8\" />
+    <Folder Include="cxc_courses\CXC_ENGLISH A\chapter9\" />
+    <Folder Include="cxc_courses\CXC_ENGLISH A\css\" />
+    <Folder Include="cxc_courses\CXC_ENGLISH A\Formulas\" />
+    <Folder Include="cxc_courses\CXC_ENGLISH A\img\" />
+    <Folder Include="cxc_courses\CXC_ENGLISH A\partials\" />
+    <Folder Include="cxc_courses\CXC_MATHEMATICS\Answers\chapter1\" />
+    <Folder Include="cxc_courses\CXC_MATHEMATICS\Answers\chapter2\" />
+    <Folder Include="cxc_courses\CXC_MATHEMATICS\Answers\chapter3\" />
+    <Folder Include="cxc_courses\CXC_MATHEMATICS\Answers\chapter4\" />
+    <Folder Include="cxc_courses\CXC_MATHEMATICS\Answers\chapter5\" />
+    <Folder Include="cxc_courses\CXC_MATHEMATICS\Answers\chapter6\" />
+    <Folder Include="cxc_courses\CXC_MATHEMATICS\Answers\chapter7\" />
+    <Folder Include="cxc_courses\CXC_MATHEMATICS\Answers\chapter8\" />
+    <Folder Include="cxc_courses\CXC_MATHEMATICS\Answers\chapter9\" />
+    <Folder Include="cxc_courses\CXC_MATHEMATICS\Assets\" />
+    <Folder Include="cxc_courses\CXC_MATHEMATICS\chapter3\" />
+    <Folder Include="cxc_courses\CXC_MATHEMATICS\chapter4\" />
+    <Folder Include="cxc_courses\CXC_MATHEMATICS\chapter5\" />
+    <Folder Include="cxc_courses\CXC_MATHEMATICS\chapter7\" />
+    <Folder Include="cxc_courses\CXC_MATHEMATICS\chapter8\" />
+    <Folder Include="cxc_courses\CXC_MATHEMATICS\css\" />
+    <Folder Include="cxc_courses\CXC_MATHEMATICS\img\" />
+    <Folder Include="cxc_courses\CXC_MATHEMATICS\partials\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>

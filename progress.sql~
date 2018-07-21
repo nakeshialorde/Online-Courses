@@ -1,0 +1,9 @@
+CREATE TABLE Progress (
+id INT NOT NULL AUTO_INCREMENT,
+courses VARCHAR(30) NOT NULL,
+progress INT,
+PRIMARY KEY (id)
+);
+
+INSERT INTO pizza (topping, slices) VALUES
+(‘Mushrooms’,3),(‘Onions’,1),(‘Olives’,1),(‘Zucchini’,1),(‘Pepperoni’,2);

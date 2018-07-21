@@ -1,0 +1,2 @@
+F:\Online Courses\obj\x86\Debug\online_courses.csprojAssemblyReference.cache
+F:\Online Courses\obj\x86\Debug\online_courses.csproj.CoreCompileInputs.cache

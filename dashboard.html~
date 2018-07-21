@@ -1,0 +1,484 @@
+<?php
+$email = $_POST['email'];
+$password = $_POST['password'];
+
+$email = stripcslashes($email);
+$password = stripcslashes($password);
+$email = mysql_real_escape_string($email);
+$password = mysql_real_escape_string($password);
+
+mysql_connect("localhost", "root", "");
+mysql_select_db("tutors246_login");
+
+$result = mysql_query("SELECT * FROM `login` WHERE `email` = '$email' and `password` = '$password'")
+or die("Failed tp query database".mysql_error());
+
+$row = mysql_fetch_array($result);
+if ($row['email'] == $email && $row['password'] == $password)
+{
+    echo "Login Success! Welcome ".$row['email'];
+}
+else
+{
+    echo "Failed to login!";
+}
+?>
+
+<?php
+
+//define host, database name, user and pass:
+$db_host = 'YOUR Host IP/URL:PORT'
+$db_database = 'YOUR_DATABASE';
+$db_user = 'USERNAME';
+$db_password = 'Password';
+//connect:
+$db = mysql_connect($db_host, $db_user, $db_password);
+mysql_select_db($db_database);
+?>
+
+<?php
+// My sql table has the columns Date, Margin, Target, Last month Margin, so I want the lines to //contain summed up values for each day. Except target, which is the monthly  target on each row, //to create a horizontal line
+$sqlQuery = "SELECT fulldate,
+round((SELECT SUM(last_month_margin) FROM dummy_value_daily d2 WHERE d1.fulldate>=d2.fulldate),2) AS last_month_margin ,
+round(Target,2) AS Target,
+round((SELECT SUM(margin) FROM dummy_value_daily d2 WHERE d1.fulldate>=d2.fulldate),2) AS margin
+FROM dummy_value_daily d1
+group by 1";
+$sqlResult = mysql_query($sqlQuery);
+while ($row = mysql_fetch_assoc($sqlResult)) {
+
+//echo to put it in the right format
+echo " data.addRow(['{$row['fulldate']}', {v: {$row['last_month_margin']}, f: '&#8364 {$row['last_month_margin']}' }, {v: {$row['Target']}, f: '&#8364 {$row['Target']}' }, {v: {$row['margin']}, f: '&#8364 {$row['margin']}' } ]); ";
+
+}
+
+?>
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/png" href="assets/img/favicon.ico">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <title>Tutors246 Online Course Portal</title>
+
+        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+        <meta name="viewport" content="width=device-width" />
+
+	 <head>
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  
+        <!-- Bootstrap core CSS     -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+
+        <!-- Animation library for notifications   -->
+        <link href="assets/css/animate.min.css" rel="stylesheet" />
+
+        <!--  Light Bootstrap Table core CSS    -->
+        <link href="assets/css/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet" />
+
+
+        <!--  CSS for Demo Purpose, don't include it in your project     -->
+        <link href="assets/css/demo.css" rel="stylesheet" />
+
+
+        <!--     Fonts and icons     -->
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+        <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+			
+		 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  		 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 		 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		 <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load('visualization', '1', {packages: ['corechart']});
+</script>
+<script type="text/javascript">
+ 
+function drawVisualization() {
+// Create and populate the data table.
+var data = new google.visualization.DataTable();
+data.addColumn('string', 'date_minute');
+data.addColumn('number', 'Last Month');
+data.addColumn('number', 'Target');
+data.addColumn('number', 'Margin');
+<?php
+ 
+$db_host = 'your_host';
+$db_database = 'your_Database';
+$db_user = 'your_user';
+$db_password = 'your_password';
+ 
+$db = mysql_connect($db_host, $db_user, $db_password);
+mysql_select_db($db_database);
+ 
+$sqlQuery = "SELECT right(fulldate,2) as fulldate,
+round((SELECT SUM(last_month_margin) FROM dummy_value_daily d2 WHERE d1.fulldate>=d2.fulldate),2) AS last_month_margin ,
+round(Target,2) AS Target,
+round((SELECT SUM(margin) FROM dummy_value_daily d2 WHERE d1.fulldate>=d2.fulldate),2) AS margin
+FROM dummy_value_daily d1
+group by 1";
+$sqlResult = mysql_query($sqlQuery);
+while ($row = mysql_fetch_assoc($sqlResult)) {
+ 
+echo " data.addRow(['{$row['fulldate']}', {v: {$row['last_month_margin']}, f: '€ {$row['last_month_margin']}' }, {v: {$row['Target']}, f: '€ {$row['Target']}' }, {v: {$row['margin']}, f: '€ {$row['margin']}' } ]); ";
+ 
+}
+ 
+?>
+ 
+// Create and draw the visualization.
+new google.visualization.LineChart(document.getElementById('visualization')).
+draw(data, {curveType: "none",
+title: "Monthly Margin",
+titleTextStyle: {color: "orange"},
+width: 1600, height: 400,
+//vAxis: {maxValue: 10},
+vAxis: {minValue: 0},
+vAxis: {title: 'Euro'},
+vAxis: {baseline: 0},
+vAxis: {gridlines: {count: 10}  },
+vAxis: {title: "Euro", titleTextStyle: {color: "orange"}},
+hAxis: {title: "Day", titleTextStyle: {color: "orange"}},
+interpolateNulls: 1
+}
+);
+}
+ 
+google.setOnLoadCallback(drawVisualization);
+</script>
+   
+    </head>
+
+    <body>
+     <div class="wrapper">
+            <div class="sidebar" data-color="white">
+                <div class="sidebar-wrapper">
+                    <div class="logo">
+                        <a href="dashboard.html" class="simple-text">
+                            <img src="img/logo.png.png" />
+                        </a>
+                    </div>
+
+                    <ul class="nav">
+                        <li class="active">
+                            <a href="dashboard.html">
+                                <i class="pe-7s-graph"></i>
+                                <p>Dashboard</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="user.html">
+                                <i class="pe-7s-user"></i>
+                                <p>User Profile</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="enrolled_courses.html">
+                                <i class="pe-7s-note2"></i>
+                                <p>Enrolled Courses</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="progress.html">
+                                <i class="pe-7s-study"></i>
+                                <p>Progress Report</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://tutors246.com/ourtutors.html">
+                                <i class="pe-7s-notebook"></i>
+                                <p>Schedule A Tutor</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Course_List.html">
+                                <i class="pe-7s-culture pe-fw"></i>
+                                <p>Courses</p>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="admin.html">
+                                <i class="pe-7s-config pe-fw"></i>
+                                <p>Admin Login</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="main-panel">
+                <nav class="navbar navbar-default navbar-fixed">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                            <a class="navbar-brand" href="#">Dashboard</a>
+                        </div>
+                        <div class="collapse navbar-collapse">
+                            <ul class="nav navbar-nav navbar-left">
+                                <li>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <i class="fa fa-dashboard"></i>
+                                        <p class="hidden-lg hidden-md">Dashboard</p>
+                                    </a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <i class="fa fa-globe"></i>
+                                        <b class="caret hidden-lg hidden-md"></b>
+                                        <p class="hidden-lg hidden-md">
+                                            5 Notifications
+                                            <b class="caret"></b>
+                                        </p>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Notification 1</a></li>
+                                        <li><a href="#">Notification 2</a></li>
+                                        <li><a href="#">Notification 3</a></li>
+                                        <li><a href="#">Notification 4</a></li>
+                                        <li><a href="#">Another notification</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <i class="fa fa-search"></i>
+                                        <p class="hidden-lg hidden-md">Search</p>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <ul class="nav navbar-nav navbar-right">
+                                <li>
+                                    <a href="">
+                                        <p>Account</p>
+                                    </a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <p>
+                                            Dropdown
+                                            <b class="caret"></b>
+                                        </p>
+
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Action</a></li>
+                                        <li><a href="#">Another action</a></li>
+                                        <li><a href="#">Something</a></li>
+                                        <li><a href="#">Another action</a></li>
+                                        <li><a href="#">Something</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#">Separated link</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <p>Log out</p>
+                                    </a>
+                                </li>
+                                <li class="separator hidden-lg"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+
+                <div class="content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="header">
+                                        <h4 class="title">Course Progress</h4>
+                                        <p class="category">Chapter Scores</p>
+                                        <!--Div that will hold the pie chart-->
+   													<div id="visualization" style="width: 500px; height: 400px;"></div>
+                                    			</div>
+                                    
+                                    
+                                    <div class="content">
+                                        <div id="chartPreferences" class="ct-chart ct-perfect-fourth"></div>
+
+                                        <div class="footer">
+                                            <div class="legend">
+                                                <i class="fa fa-circle text-info"></i> Open
+                                                <i class="fa fa-circle text-danger"></i> Bounce
+                                                <i class="fa fa-circle text-warning"></i> Unsubscribe
+                                            </div>
+                                            <hr>
+                                            <div class="stats">
+                                                <i class="fa fa-clock-o"></i> Campaign sent 2 days ago
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-8">
+                                <div class="card">
+                                    <div class="header">
+                                        <h4 class="title">Users Behavior</h4>
+                                        <p class="category">24 Hours performance</p>
+                                    </div>
+                                    <div class="content">
+                                        <div id="chartHours" class="ct-chart"></div>
+                                        <div class="footer">
+                                            <div class="legend">
+                                                <i class="fa fa-circle text-info"></i> Open
+                                                <i class="fa fa-circle text-danger"></i> Click
+                                                <i class="fa fa-circle text-warning"></i> Click Second Time
+                                            </div>
+                                            <hr>
+                                            <div class="stats">
+                                                <i class="fa fa-history"></i> Updated 3 minutes ago
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card ">
+                                    <div class="header">
+                                        <h4 class="title">Individual Courses Progress</h4>
+                                        <p class="category">Check your progress</p>
+                                    </div>
+                                    <div class="content">
+                                        <div id="chartActivity" class="ct-chart"></div>
+
+                                        <div class="footer">
+                                            <div class="legend">
+                                                <i class="fa fa-circle text-info"></i> Tesla Model S
+                                                <i class="fa fa-circle text-danger"></i> BMW 5 Series
+                                            </div>
+                                            <hr>
+                                            <div class="stats">
+                                                <i class="fa fa-check"></i> Data information certified
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="card ">
+                                    <div class="header">
+                                        <h4 class="title">Enrolled Courses</h4>
+                                        <p class="category">Courses in progress</p>
+                                    </div>
+                                    <div class="content">
+                                        <div class="table-full-width">
+                                            <table class="table">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="checkbox">
+                                                                <input id="checkbox1" type="checkbox">
+                                                                <label for="checkbox1"></label>
+                                                            </div>
+                                                        </td>
+                                                        <td>Sign contract for "What are conference organizers afraid of?"</td>
+                                                        <td class="td-actions text-right">
+                                                            <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-xs">
+                                                    <i class="fa fa-edit"></i>
+                                                </button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="footer">
+                                            <hr>
+                                            <div class="stats">
+                                                <i class="fa fa-history"></i> Updated 3 minutes ago
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <nav class="pull-left">
+                            <ul>
+                                <li>
+                                    <a href="dashboard.html">
+                            Home
+                        </a>
+                                </li>
+                                <li>
+                                    <a href="http://tutors246.com/">
+                            Tutors246
+                        </a>
+                                </li>
+                                <li>
+                                    <a href="http://tutors246.com/ourtutors.html">
+                           Tutors
+                        </a>
+                                </li>
+                                <li>
+                                    <a href="https://tutors246.wordpress.com/">
+                           Blog
+                        </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <p class="copyright pull-right">
+                            &copy;
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script> <a href="">Tutors246</a>: Achieve Academic Success! </p>
+                    </div>
+                </footer>
+
+            </div>
+        </div>
+
+
+    </body>
+
+    <!--   Core JS Files   -->
+    <script src="assets/js/jquery.3.2.1.min.js" type="text/javascript"></script>
+    <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+
+    <!--  Charts Plugin -->
+    <script src="assets/js/chartist.min.js"></script>
+
+    <!--  Notifications Plugin    -->
+    <script src="assets/js/bootstrap-notify.js"></script>
+
+    <!--  Google Maps Plugin    -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+
+    <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
+    <script src="assets/js/light-bootstrap-dashboard.js?v=1.4.0"></script>
+
+    <!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
+    <script src="assets/js/demo.js"></script>
+
+    </html>

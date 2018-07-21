@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "online_courses", "online_courses.csproj", "{5F661FD7-1137-4228-94A3-ED1DAB81958E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F661FD7-1137-4228-94A3-ED1DAB81958E}.Debug|x86.ActiveCfg = Debug|x86
+		{5F661FD7-1137-4228-94A3-ED1DAB81958E}.Debug|x86.Build.0 = Debug|x86
+		{5F661FD7-1137-4228-94A3-ED1DAB81958E}.Release|x86.ActiveCfg = Release|x86
+		{5F661FD7-1137-4228-94A3-ED1DAB81958E}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {795BDDE5-7FB3-4C2F-9CC2-3EC63D82F967}
+	EndGlobalSection
+EndGlobal
